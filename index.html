@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch API Demo</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+    <link href="" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="d-flex justify-content-center">
+      <div class="w-50 mt-5">
+        <div class="container p-2 rounded bg-light">
+          <div class="container mt-2">
+            <form action="" id="myForm">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="country"
+                  placeholder="Country Name eg:Indonesia"
+                  aria-label="Country Name eg:Indonesia"
+                  aria-describedby="basic-addon2"
+                />
+                <div class="input-group-append">
+                   <button class="btn btn-primary" type="submit">
+                    <i class="fa fa-search fa-2x"></i>
+                  </button>
+               
+                </div>
+              </div>
+            </form>
+            <div class="text-center">
+              <h1 class="danisize">COVID 19 Cases In</h1> <h1 id="titlecase" class="danisize">null</h1>
+            </div>
+            <div class="row">
+              <div class="col-4 text-center">
+                <div
+                  class="container text-white bg-primary mb-3 rounded mt-3"
+                  style="max-width: 72rem"
+                >
+                  <div class="container p-2 text-start">
+                    <i class="fa fa-tachometer fa-2x"></i>
+                    <h5 class="mt-2" style="font-size: 14px">Active Case</h5>
+                    <span class="danisize" id="activecase">null</span>
+                  </div>
+                </div>
+                <div
+                  class="container text-white bg-info mb-3 rounded mt-3"
+                  style="max-width: 72rem"
+                >
+                  <div class="container p-2 text-start">
+                    <i class="fa fa-th-list fa-2x"></i>
+                    <h5 class="mt-2" style="font-size: 14px">Total Case</h5>
+                    <span id="totalcase"class="danisize">null</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 text-center">
+                <div
+                  class="container text-white bg-danger mb-3 rounded mt-3"
+                  style="max-width: 72rem"
+                >
+                  <div class="container p-2 text-start">
+                    <i class="fa fa-times fa-2x"></i>
+                    <h5  class="mt-2" style="font-size: 14px">Total Deaths</h5>
+                    <span id="deathcase" class="danisize">null</span>
+                  </div>
+                </div>
+                <div
+                  class="container text-white bg-warning mb-3 rounded mt-3"
+                  style="max-width: 72rem"
+                >
+                  <div class="container p-2 text-start">
+                    <i class="fa fa-eye fa-2x"></i>
+                    <h5 class="mt-2" style="font-size: 14px">Critical Case</h5>
+                    <span id="criticalcase"class="danisize">null</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 text-center">
+                <div
+                  class="container text-white bg-success mb-3 rounded mt-3"
+                  style="max-width: 72rem"
+                >
+                  <div class="container p-2 text-start">
+                    <i class="fa fa-check-square-o fa-2x"></i>
+                    <h5 class="mt-2" style="font-size: 14px">Recovered</h5>
+                    <span id="recoveredcase"class="danisize">null</span>
+                  </div>
+                </div>
+                <div
+                  class="container text-white bg-secondary mb-3 rounded mt-3"
+                  style="max-width: 72rem"
+                >
+                  <div class="container p-2 text-start">
+                    <i class="fa fa-users fa-2x"></i>
+                    <h5 class="mt-2" style="font-size: 14px">Population</h5>
+                    <span id="populationcase"class="danisize">null</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container mt-5 p-2 rounded bg-light">
+          <div class="container p-2 mt-2">
+            <div class="d-flex justify-content-center mb-2"  >
+              <h1 class="danisize"> COVID 19 Cases In The World</h1>
+            </div>
+           
+            <div class="row justify-content-center">
+              <div class="col-6 text-center">
+                <div
+                  class="card text-white bg-warning mb-3"
+                  style="max-width: 72rem"
+                >
+                  <div class="card-header">Confirmed</div>
+                  <div class="card-body">
+                    <h2 id="worldactivecase"class="card-title"></h2>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 text-center">
+                <div
+                  class="card text-white bg-success mb-3"
+                  style="max-width: 72rem"
+                >
+                  <div class="card-header bg-success">Recovered</div>
+                  <div class="card-body">
+                    <h2 id="worldrecoveredcase"class="card-title"></h2>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 text-center">
+                <div
+                  class="card text-white bg-danger mb-3"
+                  style="max-width: 72rem"
+                >
+                  <div class="card-header">Death</div>
+                  <div class="card-body">
+                    <h2 id="worlddeathcase"class="card-title"></h2>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 text-center">
+                <div
+                  class="card text-white bg-primary mb-3"
+                  style="max-width: 72rem"
+                >
+                  <div class="card-header">Total Case</div>
+                  <div class="card-body">
+                    <h2 id="worldtotalcase"class="card-title"></h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

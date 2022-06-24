@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+body {
+    font-family: 'Poppins' !important;
+    background-color: #F1F2F3 !important;
+}
+.danisize{
+    font-size: 1.4em !important;
+    font-weight: bold !important;
+}
